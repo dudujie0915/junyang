@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>首页</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>  
+</head>
+<body>
+	<!--下拉刷新容器-->
+	<div id="menu-wrapper" class="menu-wrapper hidden">
+		<div id="menu" class="menu">
+			<ul class="mui-table-view index-table-view">
+				<li class="mui-table-view-cell mui-collapse mui-active">
+					<a class="mui-navigate-right" href="#">我发布的任务</a>
+					<div class="mui-collapse-content">
+						<!-- 第1个面板中的内容 -->
+						<ul>
+							<li class="li-active">已发布任务 </li>
+							<li>已发布的周期任务</li>
+						</ul>
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">待办审核</a>
+					<div class="mui-collapse-content">
+						<!-- 第2个面板中的内容 -->
+						<ul>
+							<li class="li-active"> <a href="review-matters.html">待办审核</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-collapse">
+					<a class="mui-navigate-right" href="#">下级超期</a>
+					<div class="mui-collapse-content">
+						<!-- 第3个面板中的内容 -->
+						<ul>
+							<li class="li-active"><a href="down-overdue.html">超期任务</a></li>
+							<li>超期流程</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="menu-backdrop" class="menu-backdrop"></div>
+		
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title"></h1>
+		<button id="icon-menu" class="mui-btn mui-btn-link mui-btn-nav mui-pull-left"><span class="mui-icon mui-icon-bars"></span>菜单分类</button>
+	</header>
+	
+	<div class="mui-bara mui-bar-bottom">
+		<a class="mui-tab-item1" href="new-task.html">任务新建</a>
+		<a class="mui-tab-item1" href="attention.html">我的关注</a>
+		<a class="mui-tab-item1" href="log-add.html">工作日志</a>
+		<a class="mui-tab-item1" href="instant-notification2.html">即时通知</a>
+		<a class="mui-tab-item1" href="work-summary.html">工作纪要</a>
+	</div>
+	
+	<div class="mui-content index-bg">
+	    <ul class="mui-table-view mui-grid-view mui-grid-9">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            	<a href="backlog.html">
+	                <div class="mui-media-img"><img src="images/index-icon-1.png"/></div>
+	                <div class="mui-media-body">待办事项</div>
+            	</a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            	<a href="review-matters.html">
+	                <div class="mui-media-img"><img src="images/index-icon-2.png"/></div>
+	                <div class="mui-media-body">待办审核</div>
+            	</a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            	<a href="down-overdue.html">
+	                <div class="mui-media-img"><img src="images/index-icon-3.png"/></div>
+	                <div class="mui-media-body">下级超期</div>
+            	</a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            	<a href="report-center.html">
+	                <div class="mui-media-img"><img src="images/index-icon-4.png"/></div>
+	                <div class="mui-media-body">报表中心</div>
+            	</a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            	<a href="infrormation-center.html">
+	                <div class="mui-media-img"><img src="images/index-icon-5.png"/></div>
+	                <div class="mui-media-body">信息中心</div>
+            	</a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            	<a href="docket-methods.html">
+	                <div class="mui-media-img"><img src="images/index-icon-6.png"/></div>
+	                <div class="mui-media-body">单据汇总</div>
+            	</a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            	<a href="task-management.html">
+	                <div class="mui-media-img"><img src="images/index-icon-7.png"/></div>
+	                <div class="mui-media-body">任务管理</div>
+            	</a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            	<a href="scheduling-program.html">
+	                <div class="mui-media-img"><img src="images/index-icon-8.png"/></div>
+	                <div class="mui-media-body">日程安排</div>
+            	</a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+            	<a href="information-feedback.html">
+	                <div class="mui-media-img"><img src="images/index-icon-9.png"/></div>
+	                <div class="mui-media-body">信息反馈</div>
+            	</a>
+            </li>
+        </ul>
+	</div>
+	
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init();
+		var menuWrapper = document.getElementById("menu-wrapper");
+		var menu = document.getElementById("menu");
+		var menuWrapperClassList = menuWrapper.classList;
+		var backdrop = document.getElementById("menu-backdrop");
+		
+		backdrop.addEventListener('tap', toggleMenu);
+		document.getElementById("icon-menu").addEventListener('tap',toggleMenu);
+		var busying = false;
+
+		function toggleMenu() {
+			if (busying) {
+				return;
+			}
+			busying = true;
+			if (menuWrapperClassList.contains('mui-active')) {
+				document.body.classList.remove('menu-open');
+				menuWrapper.className = 'menu-wrapper fade-out-up animated';
+				menu.className = 'menu bounce-out-up animated';
+				setTimeout(function() {
+					backdrop.style.opacity = 0;
+					menuWrapper.classList.add('hidden');
+				}, 500);
+			} else {
+				document.body.classList.add('menu-open');
+				menuWrapper.className = 'menu-wrapper fade-in-down animated mui-active';
+				menu.className = 'menu bounce-in-down animated';
+				backdrop.style.opacity = 1;
+			}
+			setTimeout(function() {
+				busying = false;
+			}, 500);
+		}
+	</script>
+</body>
+</html>

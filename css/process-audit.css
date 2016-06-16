@@ -1,0 +1,41 @@
+@font-face {font-family: "iconfont";src:url(../fonts/iconfont.ttf) format('truetype')}
+.iconfont {font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;}
+.icon-xiangyou:after { content: "\e604"; }
+.icon-checkbox:before { content: "\e600"; color: #a7a7a7;}
+.icon-checkboxoutlineblank:before { content: "\e601"; color: #a7a7a7;}
+.icon-riqi:before { content: "\e605"; position: absolute;right: 8px;top: 6px;font-size: 22px;}
+
+body,.mui-content{background: #fff;}
+header.mui-bar {background: #015595;}
+.mui-bar .mui-title {color: #fff;}
+.mui-bar .mui-icon {font-size: 18px;}
+.mui-bar .mui-icon.mui-icon-left-nav{font-size: 30px;padding-top: 6px;color: #fff;}
+.mui-bar .mui-btn-link {color: #fff;font-size: 12px;}
+.mui-bar-tab .mui-tab-item.mui-active {
+    color: #fff;
+    background-color: #015494;
+}
+
+.information-center.mui-content>.mui-table-view:first-child {margin: 15px 25px 0;}
+.information-center .mui-table-view{position: relative;}
+.information-center .mui-table-view:before {height: 0px;}
+.information-center .mui-table-view:after {background-color: #929292;}
+.information-center .mui-table-view-cell:before{font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale; content: "\e604";position: absolute;top: 11px;left: 0;color: #0B5B9A;}
+.information-center .mui-table-view-cell:after {left: 0px;background-color: #929292;content: "\e604";}
+.information-center .mui-table-view-cell>a:not(.mui-btn) {font-size: 15px;}
+.information-center .mui-table-view-cell>a:not(.mui-btn).mui-active {background-color: rgba(0,0,0,0);color:#015595;}
+.information-center .mui-navigate-right:after, .mui-push-right:after{right: 0;font-size: 30px;}
+
+.process-management-details{margin: 15px;}
+.swiper-menu-slide .swiper-slide {width: 33.333333%;text-align: center;}
+.swiper-menu-slide .swiper-slide ul,#tab-menu-slide .swiper-slide li{list-style-type: none;padding: 0;margin: 0;}
+.swiper-menu-slide .swiper-slide ul li{height: 50px;line-height: 50px;font-size: 13px;border-bottom: 1px solid #CDCDCD;}
+.swiper-menu-slide .swiper-slide ul li:first-of-type{font-size: 13px;background-color: #e8e8e8;border-bottom:none;}
+.swiper-menu-slide .swiper-slide ul li:last-of-type{border-bottom:none;}
+
+.swiper-menu-slide .swiper-slide {width: 33.333333%;text-align: center;}
+.swiper-menu-slide .swiper-slide ul,#tab-menu-slide .swiper-slide li{list-style-type: none;padding: 0;margin: 0;}
+.swiper-menu-slide .swiper-slide ul li{height: 50px;line-height: 50px;font-size: 13px;border-bottom: 1px solid #CDCDCD;}
+.swiper-menu-slide .swiper-slide ul li:first-of-type{font-size: 13px;background-color: #e8e8e8;border-bottom:none;}
+.swiper-menu-slide .swiper-slide ul li:last-of-type{border-bottom:none;}
+.tl{text-align: left!important;padding-left: 10px!important;}

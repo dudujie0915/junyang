@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>任务池</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/do-list.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">任务池</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+		
+	<div class="mui-content do-task-pool-department">
+		<ul class="dtpd-ul">
+			<li class="dtpd-li dtpd-active">销售第一部</li>
+	        <li class="dtpd-li">销售第二部</li>
+	        <li class="dtpd-li">销售第三部</li>
+	        <li class="dtpd-li">销售第四部</li>
+	        <li class="dtpd-li">销售第五部</li>
+	        <li class="dtpd-li">销售第六部</li>
+		</ul>
+
+	</div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init();
+		jQuery(document).ready(function () {
+		    jQuery(".dtpd-li").click(function(){
+		    	jQuery(this).addClass("dtpd-active").siblings("li").removeClass("dtpd-active");
+		    });
+
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>设置</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.all.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.poppicker.css"/>
+    <link rel="stylesheet" type="text/css" href="css/new-task.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">设置</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+	
+	<div class="mui-content new-task-setup">
+		<div class="mtvc">
+			<span class="mui-switch-span">紧急</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini ">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		<div class="mtvc mtvc-bb mt20">
+			<span class="mui-switch-span">提醒设置</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini txsz">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		<div class="txsz-div" style="display: none;">
+		<div class="mui-input-row mir-div">
+			<div class="mir-title">任务开始</div>
+			<div class="mir-con">任务计划开始时间前&nbsp;&nbsp;<input type="text" value="" name=""/>&nbsp;&nbsp;<span class="mirc-time">分钟</span><span class="mirc-time mirc-time-active">小时</span>，通过&nbsp;&nbsp;<span class="mirc-xiangxia"><input class="xiangxia tixing" type="text"  value="提醒" name="" /></span>&nbsp;&nbsp;通知本人</div>
+		</div>
+		<div class="mui-input-row mir-div mt10">
+			<div class="mir-title">任务未读</div>
+			<div class="mir-con">任务发送后&nbsp;&nbsp;<input type="text" value="" name=""/>&nbsp;&nbsp;<span class="mirc-time">分钟</span><span class="mirc-time mirc-time-active">小时</span>未读，通过&nbsp;&nbsp;<span class="mirc-xiangxia"><input class="xiangxia tixing" type="text"  value="提醒" name="" /></span>&nbsp;&nbsp;发送给执行人</div>
+		</div>
+		</div>
+		<div class="mtvc mtvc-bb mt20">
+			<span class="mui-switch-span">跟踪设置</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini gzsz">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		<div class="gzsz-div" style="display: none;">
+		<div class="mui-input-row mir-div mt10">
+			<div class="mir-title">任务未读</div>
+			<div class="mir-con">任务发送后&nbsp;&nbsp;<input type="text" value="" name=""/>&nbsp;&nbsp;<span class="mirc-time">分钟</span><span class="mirc-time mirc-time-active">小时</span>内未读，则通过&nbsp;&nbsp;<span class="mirc-xiangxia"><input class="xiangxia tixing" type="text"  value="提醒" name="" /></span>&nbsp;&nbsp;通知&nbsp;&nbsp;<span class="mirc-person"><input class="person" type="text"  value="运营总监" name="" /></span></div>
+		</div>
+		<div class="mui-input-row mir-div mt10">
+			<div class="mir-title">任务开始</div>
+			<div class="mir-con">任务开始，通过&nbsp;&nbsp;<span class="mirc-xiangxia"><input class="xiangxia tixing" type="text"  value="提醒" name="" /></span>&nbsp;&nbsp;通知&nbsp;&nbsp;<span class="mirc-person"><input class="person" type="text"  value="运营总监" name="" /></span></div>
+		</div>
+		<div class="mui-input-row mir-div mt10">
+			<div class="mir-title">任务完成</div>
+			<div class="mir-con">任务完成时，通过&nbsp;&nbsp;<span class="mirc-xiangxia"><input class="xiangxia tixing" type="text"  value="提醒" name="" /></span>&nbsp;&nbsp;通知&nbsp;&nbsp;<span class="mirc-person"><input class="person" type="text"  value="运营总监" name="" /></span></div>
+		</div>
+		<div class="mui-input-row mir-div mt10">
+			<div class="mir-title">任务过期</div>
+			<div class="mir-con">任务过期时，通过&nbsp;&nbsp;<span class="mirc-xiangxia"><input class="xiangxia tixing" type="text"  value="提醒" name="" /></span>&nbsp;&nbsp;通知&nbsp;&nbsp;<span class="mirc-person"><input class="person" type="text"  value="运营总监" name="" /></span></div>
+		</div>
+		</div>
+		<div class="mtvc mtvc-bb mt20">
+			<span class="mui-switch-span">任务汇报</span>
+		</div>
+		<div class="mui-input-row mir-div mt10">
+			<div class="mir-con">周期从&nbsp;&nbsp;<span class="mirc-date"><input class="date btn" type="text" data-options='{"type":"date"}' value="" name="" /></span>&nbsp;&nbsp;开始，每&nbsp;&nbsp;<input type="text" />&nbsp;&nbsp;天汇报一次，抄送&nbsp;&nbsp;<span class="mirc-person"><input class="person" type="text"  value="" name="" /></span></div>
+		</div>
+		<div class="mui-input-row mir-div mt10">
+			<div class="mir-con">逾期未汇报，通过&nbsp;&nbsp;<span class="mirc-xiangxia"><input class="xiangxia tixing" type="text"  value="提醒" name="" /></span>&nbsp;&nbsp;通知&nbsp;&nbsp;<span class="mirc-person"><input class="person" type="text"  value="运营总监" name="" /></span></div>
+		</div>
+		<div class="mtvc mt10">
+			<span class="mui-switch-span">完成时需说明情况</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini ">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		<div class="mtvc mt10">
+			<span class="mui-switch-span">督办人</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini ">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		<div class="nt-con mt10">
+			<a class="ntc-a">循环周期</a>
+			<div class="ntc-con" style="display: none;">
+				<div class="mui-input-row" >
+					<label for="">每次开始时间</label>
+					<input type="text" class="mui-input-text btn" data-options='{}' name="csr" placeholder="">
+					<i class="iconfont icon-riqi caret-down"></i>	
+				</div>
+				<div class="mui-input-row" >
+					<label for="">定期模式</label>
+					<input type="text" class="mui-input-text btn" data-options='{}' name="csr" placeholder="按天">
+					<div class="ntccon">
+						<div>每<input class="w80" type="text" value="" name=""/>天</div>
+						<div>
+							<span class="ntccon-span"><i class="iconfont icon-checkboxoutlineblank"></i>日</span>
+							<span class="ntccon-span"><i class="iconfont icon-checkboxoutlineblank"></i>一</span>
+							<span class="ntccon-span"><i class="iconfont icon-checkboxoutlineblank"></i>二</span>
+							<span class="ntccon-span"><i class="iconfont icon-checkboxoutlineblank"></i>三</span>
+							<span class="ntccon-span"><i class="iconfont icon-checkboxoutlineblank"></i>四</span>
+							<span class="ntccon-span"><i class="iconfont icon-checkboxoutlineblank"></i>五</span>
+							<span class="ntccon-span"><i class="iconfont icon-checkboxoutlineblank"></i>六</span>
+						</div>
+						<div class="mt10"><span><i class="iconfont icon-checkboxoutlineblank"></i></span>每月的&nbsp;&nbsp;<input class="w60" type="text" /></div>
+						<div class="mt8"><span><i class="iconfont icon-checkboxoutlineblank"></i></span>每月的&nbsp;<input class="w60" type="text" />&nbsp;<input class="w60" type="text" /></div>
+						<div class="mt10"><span><i class="iconfont icon-checkboxoutlineblank"></i></span>每年&nbsp;&nbsp;<input class="w60" type="text" /></div>
+						<div class="mt8"><span><i class="iconfont icon-checkboxoutlineblank"></i></span>每年&nbsp;<input class="w60" type="text" />&nbsp;&nbsp;<input class="w60" type="text" /></div>
+					</div>
+				</div>
+				<div class="mui-input-row mt20" >
+					<label for="">重复范围</label>
+					<div class="ntccon">
+						<div><span class="mirc-date"><input class="date btn" type="text" data-options='{"type":"date"}' value="" name="" /></span></div>
+						<div class="mt8"><span><i class="iconfont icon-checkboxoutlineblank"></i>无结束日期</span></div>
+						<div class="mt8"><span><i class="iconfont icon-checkboxoutlineblank"></i>重&nbsp;&nbsp;复</span>&nbsp;&nbsp;<input class="w60" type="text" />&nbsp;&nbsp;次结束</div>
+						<div class="mt8"><span><i class="iconfont icon-checkboxoutlineblank"></i>结束日期</span><span class="mirc-date"><input class="date btn" type="text" data-options='{"type":"date"}' value="" name="" /></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mtvc mt10">
+			<span class="mui-switch-span">机密</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		<div class="mtvc mt10">
+			<span class="mui-switch-span">不可转分配</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		<div class="mtvc mt10">
+			<span class="mui-switch-span">不可拒绝</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		<div class="mtvc mt10">
+			<span class="mui-switch-span">开始时间</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		<div class="mui-input-row" >
+			<input type="text" class="mui-input-text btn" data-options='{}' name="csr" placeholder="">
+			<i class="iconfont icon-riqi caret-down"></i>	
+		</div>
+		<div class="mtvc ">
+			<span class="mui-switch-span">发布时上传附件</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		<div class="mui-input-row">
+			<div class="attachment">选择文件</div>
+			<a href="javascript:;" class="file">上传<input type="file" name="" id=""></a>
+		</div>
+		<div class="mtvc mt10">
+			<span class="mui-switch-span">完成时上传附件</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.picker.all.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+		(function($) {
+			$(document).on('tap','.gzsz',function(){
+				if(jQuery(".gzsz-div").is(':hidden')){
+					jQuery(".gzsz-div").slideDown();
+				}else{
+					jQuery(".gzsz-div").slideUp();
+				}
+			  	
+			});
+			$(document).on('tap','.txsz',function(){
+				if(jQuery(".txsz-div").is(':hidden')){
+					jQuery(".txsz-div").slideDown();
+				}else{
+					jQuery(".txsz-div").slideUp();
+				}
+			  	
+			});
+				$.init();
+				var btns = $('.btn');
+				var txs = $('.tixing');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							btn.value = rs.text;
+							/* 
+							 * 返回 false 可以阻止选择框的关闭
+							 * return false;
+							 */
+							/*
+							 * 释放组件资源，释放后将将不能再操作组件
+							 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+							 */
+							picker.dispose();
+						});
+					}, false);
+				});
+				
+				
+				var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: 'ywj',
+						text: '提醒'
+					}, {
+						value: 'aaa',
+						text: '提醒2'
+					}, {
+						value: 'lj',
+						text: '提醒3'
+					}, {
+						value: 'ymt',
+						text: '提醒4'
+					}, {
+						value: 'shq',
+						text: '提醒5'
+					}, {
+						value: 'zhbh',
+						text: '提醒6'
+					}]);
+					
+					txs.each(function(i, tx) {
+						tx.addEventListener('tap', function() {
+							userPicker.show(function(items) {
+								tx.value = items[0].text;
+								//返回 false 可以阻止选择框的关闭
+								//return false;
+							});
+						}, false);
+					});
+				
+			})(mui);
+			
+		jQuery(function(){
+			$(".ntc-a").click(function(){
+				var thisdiv = $(this).next("div");
+				var vthisdiv = thisdiv.is(":visible");
+				if(vthisdiv == true){
+					$(".ntc-a").removeClass("ntca-active");
+					thisdiv.hide();
+				}else{
+					$(".ntc-a").addClass("ntca-active");
+					
+					thisdiv.show();
+				}
+			});
+			
+			$(".mirc-time").click(function(){
+				$(this).addClass("mirc-time-active");
+				$(this).siblings("span").removeClass("mirc-time-active");
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>出纳付款</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/process-management.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">出纳付款</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+		
+	<div class="mui-content process-management-details">
+	    <div class="swiper-container swiper-menu-slide">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<ul>
+						<li>单据类型</li>
+						<li>工作预算</li>
+						<li>工作预算</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>金额</li>
+						<li>60,000.00</li>
+						<li>800.00</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>付款方式</li>
+						<li>现金</li>
+						<li>现金</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>当前办理人</li>
+						<li>财务总监</li>
+						<li>运营总监</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>截至办理日期</li>
+						<li></li>
+						<li></li>
+				    </ul>
+				</div>
+			</div>
+			<div class="swiper-scrollbar">&nbsp;</div>
+	    </div>
+
+
+	</div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init();
+		jQuery(document).ready(function () {
+		    var swiper2 = new Swiper('.swiper-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true,
+		        scrollbar:'.swiper-scrollbar',
+		        scrollbarHide:false
+		    });
+
+		});
+	</script>
+</body>
+</html>

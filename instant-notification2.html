@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>即时通知</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.all.css"/>
+    <link rel="stylesheet" type="text/css" href="css/instant-notification.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">即时通知</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+    
+    <nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active" href="#tabbar">保存</a>
+		<a class="mui-tab-item" href="#tabbar">返回</a>
+	</nav>
+	
+	<div class="mui-content instant-notification">
+		 <div class="ind">
+	    	<div class="ind-title">类别：</div>
+	    	<div class="ind-con">
+	    		<a class="leibie" href="instant-notification.html">会议</a>
+	    		<a class="leibie leibie-active" href="instant-notification2.html">一般</a>
+	    	</div>
+	    </div>
+	    <div class="ind mt8">
+	    	<div class="ind-title">主题：</div>
+	    	<div class="ind-con">
+	    		<div class="mui-input-row">
+					<input type="text" class="mui-input-text" name="rwm" placeholder="任务名">
+				</div>
+	    	</div>
+	    </div>
+	    <div class="mtvc mt8">
+			<span class="mui-switch-span">紧急</span>
+			<div class="mui-switch mui-switch-blue mui-switch-mini">
+				<div class="mui-switch-handle"></div>
+			</div>
+		</div>
+		<div class="ind mt8">
+	    	<div class="ind-title">通知对象：</div>
+	    	<div class="ind-con">
+	    		<div class="mui-input-row">
+					<input type="text" class="mui-input-text" name="rwm" placeholder="任务名">
+					<i class="iconfont icon-mine"></i>	
+				</div>
+	    	</div>
+	    </div>
+		<div class="ind mt18">
+	    	<div class="ind-title">附件：</div>
+	    	<div class="ind-con">
+	    		<div class="mui-input-row">
+					<div class="attachment">选择文件</div>
+					<a href="javascript:;" class="file">上传<input type="file" name="" id=""></a>
+				</div>
+	    	</div>
+	    </div>
+	    <div class="ind mt18">
+	    	<div class="ind-title">内容：</div>
+	    	<div class="ind-con">
+	    		<div class="mui-input-row">
+					<textarea class="indc-ta" name="" rows="" cols=""></textarea>
+				</div>
+	    	</div>
+	    </div>
+	    
+	</div>
+	
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init();
+	</script>
+</body>
+</html>

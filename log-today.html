@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>当日须完成事项</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/log.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">当日须完成事项</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+    
+    <nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active" href="#">引用</a>
+	</nav>
+	
+	<div class="mui-content log-today">
+		<ul class="log-ul log-ul-today">
+			<li class="log-li"><a href="log-today.html">当日须完成事项</a></li>
+			<li class="log-li"><a href="log-other.html">其他须完成事项</a></li>
+		</ul>
+		<div class="log-div">
+			<div class="log-title">截止日为当日事项</div>
+			<ul class="log-top-ul">
+				<li><span><i class="iconfont icon-checkboxoutlineblank"></i></span>事项名称</li>
+				<li><span><i class="iconfont icon-checkboxoutlineblank"></i></span>建立物品档案</li>
+				<li><span><i class="iconfont icon-checkboxoutlineblank"></i></span>建立物品档案</li>
+			</ul>
+		</div>
+		<div class="log-div">
+			<div class="log-title">除当日外有截止日期事项</div>
+			<ul class="log-bottom-ul">
+				<li><span><i class="iconfont icon-checkboxoutlineblank"></i></span><div class="log-bottom-div-one">事项名称</div><div class="log-bottom-div-two">截止时间</div></li>
+				<li><span><i class="iconfont icon-checkboxoutlineblank"></i></span><div class="log-bottom-div-one">建立物品档案</div><div class="log-bottom-div-two">2015-03-20</div></li>
+				<li><span><i class="iconfont icon-checkboxoutlineblank"></i></span><div class="log-bottom-div-one">建立物品档案</div><div class="log-bottom-div-two">2015-03-22</div></li>
+			</ul>
+		</div>
+	</div>
+	
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+    <script>
+		(function($) {
+			$.init();
+		})(mui);
+		jQuery(document).ready(function(){
+		    var swiper = new Swiper('.tab-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true
+		    });
+		    jQuery(".log-top-ul li,.log-bottom-ul li").click(function(){
+                jQuery(this).find("span i").addClass("icon-checkbox").removeClass("icon-checkboxoutlineblank");
+                jQuery(this).siblings("li").find("span i").removeClass("icon-checkbox").addClass("icon-checkboxoutlineblank");
+		    });
+		});
+	</script>
+</body>
+</html>

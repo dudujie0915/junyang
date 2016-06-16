@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>占比表</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.all.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.poppicker.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/radar.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">占比表</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+    
+    <nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active" href="#tabbar">保存文件</a>
+		<a class="mui-tab-item" href="#tabbar-with-chat">发送</a>
+		<a class="mui-tab-item xstx" href="#tabbar">显示图形</a>
+	</nav>
+		
+	<div class="mui-content radar-contrast">
+		<div class="swiper-container" id="content-menu-slide">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><a href="radar-contrast.html" class="r-contrast">对比表</a></div>
+				<div class="swiper-slide"><a href="radar-ranking.html" class="r-ranking">排名表</a></div>
+				<div class="swiper-slide swiper-slide-bb"><a href="radar-proportion.html" class="r-proportion">占比表</a></div>
+				<div class="swiper-slide"><a href="radar-radar.html" class="r-radar">雷达图</a></div>
+				<div class="swiper-slide"><a href="radar-analysis.html" class="r-analysis">占比分析</a></div>
+			</div>
+	    </div>
+	    <div class="radar-con">
+	    	<div class="radar-con-title">统计值<span class="ml30">按组织结构</span></div>
+			<div class="radar-from">
+		        <div class="radar-from-title">排名方式</div>
+		        <div class="mui-input-row">
+					<input type="text" class="mui-input-text" name="" id="gaodi" placeholder="由高到低"/>
+					<i class="mui-icon mui-icon-arrowdown"></i>
+			    </div>
+			</div>   
+			<div class="radar-from">
+		        <div class="radar-from-title">排名期间</div>
+	            <div class="radar-from-between">
+		        	<div class="mui-input-row">
+						<input type="text" class="mui-input-text btn" name="" data-options='{"type":"date"}'/>
+						<i class="mui-icon mui-icon-arrowdown"></i>
+				    </div>
+				    <div class="mui-input-row">
+						<input type="text" class="mui-input-text btn" name="" data-options='{"type":"date"}'/>
+						<i class="mui-icon mui-icon-arrowdown"></i>
+				    </div>
+		        </div> 
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.picker.all.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        mui.ready(function(){
+        	mui(document).on('tap','.r-analysis',function(){
+			  mui.openWindow({
+				    url:'radar-analysis.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		    mui(document).on('tap','.r-contrast',function(){
+			  mui.openWindow({
+				    url:'radar-contrast.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		    mui(document).on('tap','.r-proportion',function(){
+			  mui.openWindow({
+				    url:'radar-proportion.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		    mui(document).on('tap','.r-radar',function(){
+			  mui.openWindow({
+				    url:'radar-radar.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		    mui(document).on('tap','.r-ranking',function(){
+			  mui.openWindow({
+				    url:'radar-ranking.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		    mui(document).on('tap','.xstx',function(){
+			  mui.openWindow({
+				    url:'radar-echart-pie.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		});
+		(function($, doc) {
+				$.init();
+				$.ready(function() {
+					var btns = $('.btn');
+					//分公司
+					var duixiang = new $.PopPicker();
+					duixiang.setData([{
+						value: '1',
+						text: '0-25%'
+					}, {
+						value: '2',
+						text: '26%-50%'
+					}, {
+						value: '3',
+						text: '51%-75%'
+					}, {
+						value: '4',
+						text: '76%-100%'
+					}]);
+					var inputduixiang = doc.getElementById('duixiang');
+					inputduixiang.addEventListener('tap', function(event) {
+						duixiang.show(function(items) {
+							inputduixiang.value = items[0].text;
+						});
+					}, false);
+				
+					var gaodi = new $.PopPicker();
+					gaodi.setData([{
+						value: '1',
+						text: '由高到低'
+					}, {
+						value: '2',
+						text: '由低到高'
+					}, {
+						value: '3',
+						text: '由大到小'
+					}, {
+						value: '4',
+						text: '由小到大'
+					}]);
+					var inputgaodi = doc.getElementById('gaodi');
+					inputgaodi.addEventListener('tap', function(event) {
+						gaodi.show(function(items) {
+							inputgaodi.value = items[0].text;
+						});
+					}, false);
+					
+					var paiming = new $.PopPicker();
+					paiming.setData([{
+						value: '1',
+						text: '1'
+					}, {
+						value: '2',
+						text: '2'
+					}, {
+						value: '3',
+						text: '3'
+					}, {
+						value: '4',
+						text: '4'
+					},{
+						value: '5',
+						text: '5'
+					}, {
+						value: '6',
+						text: '6'
+					}, {
+						value: '7',
+						text: '7'
+					}, {
+						value: '8',
+						text: '8'
+					},{
+						value: '9',
+						text: '9'
+					}, {
+						value: '10',
+						text: '10'
+					}]);
+					var inputpaiming = doc.getElementById('paiming');
+					inputpaiming.addEventListener('tap', function(event) {
+						paiming.show(function(items) {
+							inputpaiming.value = items[0].text;
+						});
+					}, false);
+					
+					btns.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var optionsJson = this.getAttribute('data-options') || '{}';
+							var options = JSON.parse(optionsJson);
+							var id = this.getAttribute('id');
+							/*
+							 * 首次显示时实例化组件
+							 * 示例为了简洁，将 options 放在了按钮的 dom 上
+							 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+							 */
+							var picker = new $.DtPicker(options);
+							picker.show(function(rs) {
+								/*
+								 * rs.value 拼合后的 value
+								 * rs.text 拼合后的 text
+								 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+								 * rs.m 月，用法同年
+								 * rs.d 日，用法同年
+								 * rs.h 时，用法同年
+								 * rs.i 分（minutes 的第二个字母），用法同年
+								 */
+								btn.value = rs.text;
+								/* 
+								 * 返回 false 可以阻止选择框的关闭
+								 * return false;
+								 */
+								/*
+								 * 释放组件资源，释放后将将不能再操作组件
+								 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+								 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+								 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+								 */
+								picker.dispose();
+							});
+						}, false);
+					});
+					
+				});
+				
+			})(mui, document);
+		jQuery(document).ready(function () {
+			var swiper = new Swiper('#content-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true
+		    });
+		    jQuery("#content-menu-slide .swiper-slide").click(function(){
+                jQuery(this).addClass("swiper-slide-bb").siblings(".swiper-slide").removeClass("swiper-slide-bb");
+		    }); 
+		    jQuery(".radar-more").click(function(){
+		    	jQuery(".radar-con").append('<div class="radar-from"><div class="radar-from-title">对比期间2</div><div class="radar-from-between"><div class="mui-input-row"><input type="text" class="mui-input-text btn" name="" data-options=\'{"type":"date"}\'/><i class="mui-icon mui-icon-arrowdown"></i></div><div class="mui-input-row"><input type="text" class="mui-input-text btn" name="" data-options=\'{"type":"date"}\'/><i class="mui-icon mui-icon-arrowdown"></i></div></div></div>');
+		    });
+
+		});
+	</script>
+</body>
+</html>

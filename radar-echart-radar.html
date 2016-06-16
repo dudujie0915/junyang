@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>雷达图</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/radar.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">雷达图</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+    
+    <nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item" href="http://m.wdzj.com">保存</a>
+		<a class="mui-tab-item" href="http://m.wdzj.com">发送</a>
+		<a class="mui-tab-item mui-active xsbg" href="http://m.wdzj.com">显示表格</a>
+	</nav>
+	
+	<div class="mui-content radar-echart">
+		<div id="main" ></div>
+	</div>
+	
+	<script src="js/mui.min.js"></script>
+	<script src="js/echarts-all.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+		mui.init();
+		mui.ready(function(){
+		    mui(document).on('tap','.xsbg',function(){
+			  mui.openWindow({
+				    url:'radar-analysis.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		});
+		var myChart = echarts.init(document.getElementById('main')); 
+		var option = {
+		    title : {
+		        text: '公司月度报表对比图公司月度占比图',
+		        subtext: '单位（万元）',
+		        x:'center',
+		        itemGap:15,
+		        textStyle:{
+		            fontSize: 18,
+		            color: '#565656',
+		        },
+		       subtextStyle:{
+		           fontSize: 14,
+		           color: '#b7b7b7'
+		       }
+		    },
+		    legend: {
+		        orient : 'vertical',
+		        x : 'right',
+		        y : 'center',
+		        data:['华南区','华东区','华北区']
+		    },
+		    polar : [
+		        {
+		            indicator : [
+		                {text : '标准', max  : 140},
+		                {text : '精准', max  : 140},
+		                {text : '精准', max  : 140}
+		            ],
+		            center : ['50%',250],
+		            radius : 130
+		        }
+		    ],
+		    series : [
+		        {
+		            name: '雷达图',
+		            type: 'radar',
+		            symbol:'none',
+		            itemStyle: {
+		                normal: {
+		                    areaStyle: {
+		                        type: 'default'
+		                    }
+		                }
+		            },
+		            data : [
+		                {
+		                    value : [97, 42, 88],
+		                    name : '华南区'
+		                },
+		                {
+		                    value : [97, 32, 74],
+		                    name : '华东区'
+		                },
+		              {
+		                    value : [90, 52, 68],
+		                    name : '华北区'
+		                }
+		            ]
+		        }
+		    ]
+		};
+		myChart.setOption(option); 
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>警告详细</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/system-warning.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">警告详细</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+		
+	<div class="mui-content system-warning-details">
+		<div class="swd-div">
+			<div class="swd-title">警告内容：</div>
+			<div class="swd-con">任务名为警告内容警告内容警告内容警告内容警告内容警告内容</div>
+		</div>
+		<div class="swd-div mt20">
+			<div class="swd-title">警告详情：</div>
+			<ul class="swd-ul">
+				<li class="swd-li swd-li-you"><span>任务名：</span>警告详情</li>
+				<li class="swd-li"><span>分配人：</span>总经理</li>
+				<li class="swd-li"><span>执行人：</span>运营总监</li>
+				<li class="swd-li"><span>任务描述：</span>设备报价单</li>
+			</ul>
+		</div>
+
+	</div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init();
+		jQuery(document).ready(function () {
+		    var swiper = new Swiper('#tab-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true
+		    });
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+@font-face {font-family: "iconfont";src:url(../fonts/iconfont.ttf) format('truetype')}
+.iconfont {font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;}
+.icon-xiangyou:after { content: "\e604"; }
+.icon-checkbox:before { content: "\e600"; color: #a7a7a7;}
+.icon-checkboxoutlineblank:before { content: "\e601"; color: #a7a7a7;}
+.icon-riqi:before { content: "\e605"; position: absolute;right: 8px;top: 6px;font-size: 22px;}
+
+body,.mui-content{background: #fff;}
+header.mui-bar {background: #015595;}
+.mui-bar .mui-title {color: #fff;}
+.mui-bar .mui-icon {font-size: 18px;}
+.mui-bar .mui-icon.mui-icon-left-nav{font-size: 30px;padding-top: 6px;color: #fff;}
+.mui-bar .mui-btn-link {color: #fff;font-size: 12px;}
+.docket.mui-content>.mui-table-view:first-child {margin: 15px 25px 0;}
+.docket .mui-table-view{position: relative;}
+.docket .mui-table-view:before {height: 0px;}
+.docket .mui-table-view:after {background-color: #929292;}
+.docket .mui-table-view-cell:before{font-family:"iconfont" !important;font-size:12px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale; content: "\e604";position: absolute;top: 11px;left: 0;color: #0B5B9A;}
+.docket .mui-table-view-cell:after {left: 0px;background-color: #929292;content: "\e604";}
+.docket .mui-table-view-cell>a:not(.mui-btn) {font-size: 15px;}
+.docket .mui-table-view-cell>a:not(.mui-btn).mui-active {background-color: rgba(0,0,0,0);color:#015595;}
+.docket .mui-navigate-right:after, .mui-push-right:after{right: 0;font-size: 30px;}
+
+.docket-review{margin:20px;}
+.docket-review.mui-content>.mui-table-view:first-child {margin: 0;}
+.docket-review .mui-table-view-cell{background-color: #015595;color:#fff;margin-bottom: 20px;}
+.docket-review .mui-table-view-cell:after {
+    height: 0;
+    left: 0;
+}
+.docket-review #docket-review-ul li:first-of-type .mui-navigate-right:after, .mui-push-right:after {
+    right: 0;
+    font-size: 40px;
+    color: #c8c8c8;;
+}
+.docket-review #docket-review-ul li .mui-navigate-right:after, .mui-push-right:after {
+    right: 0;
+    font-size: 0px;
+    color: #fff;
+}
+#content-menu-slide .swiper-slide {width: 25%;height: 45px;line-height: 45px;border-bottom: 1px solid #C3C3C3;text-align: center;font-size: 13px;}
+#content-menu-slide .swiper-slide-bb{border-bottom: 2px solid #015594;}
+
+.docket-review #docket-review-time .mui-table-view-cell{background-color: #fff;color:#929292;margin-top: 20px;padding: 0;border-bottom: 1px solid #c3c3c3;}
+.docket-review #docket-review-time.mui-table-view:before,.docket-review #docket-review-time.mui-table-view:after {height: 0px;}
+.docket-review #docket-review-time .tab-menu-slide {margin-top: 10px;}
+#docket-review-time .docket-review-time-title{color: #015494;padding-left: 10px;font-size: 16px;}
+.select-date-div{position: relative;}
+
+.tab-menu-slide{margin-top: 20px;}
+.tab-menu-slide .swiper-slide {width: 33.3333333%;text-align: center;}
+.tab-menu-slide .swiper-slide ul,#tab-menu-slide .swiper-slide li{list-style-type: none;padding: 0;margin: 0;}
+.tab-menu-slide .swiper-slide ul li{height: 50px;line-height: 50px;font-size: 14px;}
+.tab-menu-slide .swiper-slide ul li:first-of-type{font-size: 14px;background-color: #e8e8e8;}
+
+.mui-bar-tab .mui-tab-item.mui-active {
+    color: #fff;
+    background-color: #015494;
+}
+
+#select-date.mui-btn-block {
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    border-radius: 0;
+    border: 1px solid #B8B8B8;
+}
+
+.docket-apply .mui-card,.docket-apply .mui-card .mui-table-view {
+    border-radius: 0px;
+    border: none;
+}
+.docket-apply .mui-card .mui-table-view .mui-table-view-cell:first-child, .mui-card .mui-table-view .mui-table-view-divider:first-child {
+    top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.docket-apply .mui-card .mui-table-view .mui-table-view-cell:last-child, .mui-card .mui-table-view .mui-table-view-divider:last-child {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.docket-apply .mui-card .mui-table-view .mui-table-view-cell:last-child .mui-collapse-content ul li:last-of-type{border-bottom: none;}
+.docket-apply .mui-card .mui-table-view .mui-table-view-cell:last-child .mui-collapse-content{margin-bottom: -18px;}
+.docket-apply .mui-card .mui-table-view .mui-table-view-cell.mui-active a{background-color: #fff;color: #015595;}
+.docket-apply .mui-table-view-cell:after {
+    left: 0px;
+    background-color: #ccc;
+}
+.docket-apply .mui-card .mui-table-view .mui-table-view-cell.mui-active:after{height: 0;}
+.docket-apply.mui-content>.mui-card {
+    margin: 20px;
+}
+.docket-apply .mui-table-view-cell.mui-collapse>.mui-navigate-right:after, .docket-apply .mui-table-view-cell.mui-collapse>.mui-push-right:after {
+    content: '\e583';
+    font-size: 30px;
+    right: 0;
+}
+.docket-apply .mui-table-view-cell.mui-collapse.mui-active>.mui-navigate-right:after, .docket-apply .mui-table-view-cell.mui-collapse.mui-active>.mui-push-right:after {
+    content: '\e581';
+    font-size: 30px;
+    right: 0;
+}
+.docket-apply .mui-card .mui-table-view:after, .mui-card .mui-table-view:before, .docket-apply .mui-card>.mui-table-view>.mui-table-view-cell:last-child:after, .docket-apply .mui-card>.mui-table-view>.mui-table-view-cell:last-child:before {
+    height: 1px;
+}
+.docket-apply .mui-card .mui-table-view-cell .mui-collapse-content ul,
+.docket-apply .mui-card .mui-table-view-cell .mui-collapse-content ul li{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+.docket-apply .mui-card .mui-table-view-cell .mui-collapse-content ul li{
+	border-bottom: 1px solid #DCDCDC;
+	height: 43px;
+	line-height: 43px;
+	padding: 0 15px;
+}
+.docket-apply .mui-card .mui-table-view-cell .mui-collapse-content ul li:first-of-type{border-top: 1px solid #ccc;}
+.docket-apply .mui-card  .mui-table-view-cell.mui-collapse .mui-collapse-content {
+    margin: 0px -30px -11px;
+    padding: 8px 15px;
+}
+
+.docket-review .mui-table-view-cell>a:not(.mui-btn) {
+    background: #EAEAEA;
+    color: #000;
+}
+.d0{background: #d0d0d0!important;}
+.p32{font-size: 16px!important;
+    padding-left: 32px!important;}
+.p32 a{color: #000!important;}
+.tl{text-align: left!important;padding-left: 10px!important;}

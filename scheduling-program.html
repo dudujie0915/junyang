@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>日程安排</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/fullcalendar.css"/>
+    <link rel="stylesheet" type="text/css" href="css/scheduling-program.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">日程安排</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+	
+	<div class="mui-content scheduling-program">
+	   <div id='calendar'></div>
+	</div>
+	
+	<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-ui-1.10.2.custom.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/fullcalendar.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init();
+		jQuery(function() {
+	
+		var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+		
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay' 
+			},
+            defaultView:'agendaDay',
+			firstDay:1,
+			editable: true,
+			aspectRatio: 0.64,
+            lang: 'es',
+			timeFormat: 'H:mm',
+			axisFormat: 'H:mm',
+			events: [
+				{
+					title: '全天计划\r\n#####\r\n写代码',
+					start: new Date(y, m, 1)
+				},
+				{
+					title: '张家界四日游',
+					start: new Date(y, m, d-5),
+					end: new Date(y, m, d-2)
+				},
+				{
+					id: 999,
+					title: '电话回访客户',
+					start: new Date(y, m, d-6, 16, 0),
+					allDay: false
+				},
+				{
+					id: 999,
+					title: '电话回访客户',
+					start: new Date(y, m, d+4, 16, 0),
+					allDay: false
+				},
+				{
+					title: '视频会议',
+					start: new Date(y, m, d, 10, 30),
+					allDay: false
+				},
+				{
+					title: '中秋放假',
+					start: '2013-09-19',
+					end: '2013-09-21',
+				},
+				{
+					title: '午饭',
+					start: new Date(y, m, d, 12, 0),
+					end: new Date(y, m, d, 14, 0),
+					allDay: false
+				},
+				{
+					title: '生日聚会',
+					start: new Date(y, m, d+1, 19, 0),
+					end: new Date(y, m, d+1, 22, 30),
+					allDay: false
+				},
+				{
+					title: '访问Helloweba主页',
+					start: new Date(y, m, 28),
+					end: new Date(y, m, 29),
+					url: 'http://helloweba.com/'
+				},
+				{
+					title: '实战训练课',
+					start: new Date(y, m, d+23)
+				},
+			]
+		});
+		
+	});
+	</script>
+</body>
+</html>

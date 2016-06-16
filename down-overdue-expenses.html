@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>报销流程</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/down-overdue.css"/>  
+</head>
+<body>
+	
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">报销流程</h1>
+		<button id="icon-menu" class="mui-btn mui-btn-link mui-btn-nav mui-pull-left"><span class="mui-icon mui-icon-bars"></span>总部</button>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+	
+	<div class="mui-content down-overdue-expenses">
+	    <div class="swiper-container" id="tab-menu-slide">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<ul>
+						<li><i class="iconfont icon-checkboxoutlineblank"></i></li>
+						<li><i class="iconfont icon-checkboxoutlineblank"></i></li>
+						<li><i class="iconfont icon-checkboxoutlineblank"></i></li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>单据编号</li>
+						<li>fk20150424004</li>
+						<li>fk20150424004</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>申请人</li>
+						<li>运营总监</li>
+						<li>运营总监</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>审核人</li>
+						<li>-</li>
+						<li>-</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>申请日期</li>
+						<li>15-05-31</li>
+						<li>15-05-31</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>办理周期</li>
+						<li>15-05-31</li>
+						<li>15-05-31</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>办理时限</li>
+						<li>1-0-0</li>
+						<li>1-0-0</li>
+				    </ul>
+				</div>
+			</div>
+			<div class="swiper-scrollbar">&nbsp;</div>
+	    </div>
+	</div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init();
+		jQuery(document).ready(function () {
+		    var swiper = new Swiper('#tab-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true,
+		        scrollbar:'.swiper-scrollbar',
+		        scrollbarHide:false
+		    });
+		});
+	</script>
+</body>
+</html>

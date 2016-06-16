@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>登录</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.css"/>    
+    <link rel="stylesheet" type="text/css" href="css/mui.poppicker.css"/>
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>  
+</head>
+<body>
+	<div class="mui-content login-bg">
+	    <div class="logo"><img src="images/logo.png"/></div>  
+	    <div class="mui-content-padded login-text">
+	    	<form action="#" method="post" id="loginForm">
+		    	<div class="mui-input-row">
+					<input type="text" id="firstname" name="firstname" class="mui-input-text" placeholder="公司口令">
+				</div>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-text" name="muiinputfgs" id="muiinputfgs" placeholder="某某分公司">
+					<i class="iconfont icon-xiangxia caret-down"></i>
+				</div>
+				<div class="mui-input-row pl26">
+					<input type="text" id="twoname" name="twoname" class="mui-input-text" placeholder="用户名">
+					<i class="iconfont icon-mine"></i>
+				</div>
+				<div class="mui-input-row pl26">				
+					<input type="text" id="loginpassword" name="loginpassword" class="mui-input-text" placeholder="密码">
+					<i class="mui-icon mui-icon-locked"></i>
+				</div>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-text" name="muiinputyy" id="muiinputyy" placeholder="语言/language">
+					<i class="iconfont icon-xiangxia caret-down"></i>	
+				</div>
+				<div class="mui-input-row mui-checkbox mui-left">
+					<label>保存用户信息</label>
+					<input name="checkbox" value="Item 1" type="checkbox">
+				</div>
+				<a class="login-password" href="password.html">修改密码</a>
+				<button type="submit" class="mui-btn mui-btn-block">登录</button>
+	    	</form>
+	    	<!-- 错误容器 -->
+            <div class="container"><ul></ul></div>
+	    </div>
+	    <div class="login-copy">
+	    	<!--版权所有© 2013-2017 上海君阳信息科技有限公司-->
+	    	<img src="images/copy.png"/>
+	    </div>
+	</div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.picker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      	(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//分公司
+					var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: '分公司1',
+						text: '分公司1'
+					}, {
+						value: '分公司2',
+						text: '分公司2'
+					}, {
+						value: '分公司3',
+						text: '分公司3'
+					}, {
+						value: '分公司4',
+						text: '分公司4'
+					}]);
+					var showUserPickerButton = doc.getElementById('muiinputfgs');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							showUserPickerButton.value = items[0].value;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					//语言
+					var userPicker1 = new $.PopPicker();
+					userPicker1.setData([{
+						value: '简体中文',
+						text: '简体中文'
+					}, {
+						value: '繁体中文',
+						text: '繁体中文'
+					}, {
+						value: 'English',
+						text: 'English'
+					}]);
+					var showUserPickerButton1 = doc.getElementById('muiinputyy');
+					showUserPickerButton1.addEventListener('tap', function(event) {
+						userPicker1.show(function(items) {
+							showUserPickerButton1.value = items[0].value;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+							showUserPickerButton1.focus();
+						});
+					}, false);
+				});
+				
+			})(mui, document);
+			mui('.mui-checkbox').on('change', 'input', function() {
+			var value = this.checked?"true":"false";
+			if(value == "true"){
+				this.previousElementSibling.style.color = "#2c2c2c";
+			}else{
+				this.previousElementSibling.style.color = "#A9A9A9";
+			}	
+		});
+		jQuery(function(){
+			var container = $('div.container');
+			jQuery("#loginForm").validate({
+				focusInvalid:false,
+				focusCleanup:true,
+				errorContainer: container,
+				errorLabelContainer: $("ul", container),
+				wrapper: 'li',
+		        rules: {
+				   firstname:{required: true},
+				   twoname:{required: true},
+				   loginpassword:{required: true},
+				   muiinputyy:{required: true}
+				},
+				messages: {
+				   firstname: "请输入公司口令",
+				   twoname:"请输入用户名",
+				   loginpassword:"请输入密码",
+				   muiinputyy:"请输入语言"
+				},
+				submitHandler:function(form){
+		            form.submit();
+		        }
+		    });
+
+		});
+    </script>
+</body>
+</html>

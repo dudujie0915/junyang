@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>系统警告</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/system-warning.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">系统警告</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+    
+    <!--<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active" href="#tabbar">删除</a>
+	</nav>-->
+		
+	<div class="mui-content system-warning">
+	    <div class="swiper-container" id="tab-menu-slide">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<ul>
+						<li class="tl">警告内容</li>
+						<li class="longtap tl">任务名为【设备报价单上报】的任务</li>
+						<li class="longtap tl">任务名为【设备报价单上报】的任务</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>设置人</li>
+						<li class="longtap">运营总监</li>
+						<li class="longtap">运营总监</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>发送时间</li>
+						<li class="longtap">15-05-31 09:02</li>
+						<li class="longtap">15-05-31 09:02</li>
+				    </ul>
+				</div>
+			</div>
+	    </div>
+
+
+	</div>
+	<div class="popup">
+	    <ul class="popup-ul">
+    	    <li class="popup-li sc">删除</li>
+	    </ul>
+    </div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init({
+		  gestureConfig:{
+		   tap: true, //默认为true
+		   longtap: true, //默认为false
+		  }
+		});
+		mui.ready(function(){
+		    var thisindex = '';
+			var thisc = '';
+		    mui(document).on('longtap','.longtap',function(){
+		      thisindex = jQuery(this).index();
+			  thisc = jQuery(this).parent().parent().parent().children(".swiper-slide").find("ul li:eq("+thisindex+")");
+			  thisc.addClass("blue")
+			  jQuery(".popup").show();
+		    });
+		    mui(document).on('tap','.popup',function(){
+			  	thisc.removeClass("blue");
+			  	jQuery(".popup").hide();
+			});
+			mui(document).on('tap','.sc',function(){
+				thisc.removeClass("blue");
+			  	jQuery(".popup").hide();
+			});
+			
+			mui(document).on('tap','.longtap',function(){
+			  mui.openWindow({
+				    url:'do-list-task-pool-details.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		});
+		jQuery(document).ready(function () {
+		    var swiper = new Swiper('#tab-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true
+		    });
+		});
+	</script>
+</body>
+</html>

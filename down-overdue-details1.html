@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>下级超期流程</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/down-overdue.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">下级超期流程</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+    
+    <!--<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active" href="down-overdue-screen.html">流程筛选</a>
+	</nav>-->
+		
+	<div class="mui-content down-overdue-flow">
+	    <div class="swiper-container swiper-menu-slide">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<ul>
+						<li>受款单位/人</li>
+						<li class="longtap">长江电子</li>
+						<li class="longtap">武汉长虹</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>实际付款总金额</li>
+						<li class="longtap">2000</li>
+						<li class="longtap">1200</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>付款类别</li>
+						<li class="longtap">办公费用</li>
+						<li class="longtap">办公费用</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>审核人 </li>
+						<li class="longtap">运营总监</li>
+						<li class="longtap">运营经理</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>截止办理日期 </li>
+						<li class="longtap">15-05-20</li>
+						<li class="longtap">15-05-20</li>
+				    </ul>
+				</div>
+			</div>
+			<div class="swiper-scrollbar">&nbsp;</div>
+	    </div>
+
+
+	</div>
+	<div class="popup">
+	    <ul class="popup-ul">
+	    	<li class="popup-li lcsx">流程筛选</li>
+	    </ul>
+    </div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init({
+		  gestureConfig:{
+		   tap: true, //默认为true
+		   longtap: true, //默认为false
+		  }
+		});
+		mui.ready(function(){
+		    var thisindex = '';
+			var thisc = '';
+		    mui(document).on('longtap','.longtap',function(){
+		      thisindex = jQuery(this).index();
+			  thisc = jQuery(this).parent().parent().parent().children(".swiper-slide").find("ul li:eq("+thisindex+")");
+			  thisc.addClass("blue")
+			  jQuery(".popup").show();
+		    });
+			mui(document).on('tap','.popup',function(){
+			  	thisc.removeClass("blue");
+			  	jQuery(".popup").hide();
+			});
+			mui(document).on('tap','.lcsx',function(){
+				thisc.removeClass("blue");
+				jQuery(".popup").hide();
+			  mui.openWindow({
+				    url:'down-overdue-screen.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		    mui(document).on('tap','.longtap',function(){
+			  mui.openWindow({
+				    url:'down-overdue-details.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		});
+		jQuery(document).ready(function () {
+		    var swiper2 = new Swiper('.swiper-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true,
+		        scrollbar:'.swiper-scrollbar',
+		        scrollbarHide:false
+		    });
+
+		});
+	</script>
+</body>
+</html>

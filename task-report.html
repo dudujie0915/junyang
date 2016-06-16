@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>汇报任务</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/task-report.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">汇报任务</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+    
+    <!--<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active" href="#tabbar">汇报进度</a>
+	</nav>-->
+		
+	<div class="mui-content task-report">
+		<div class="swiper-container" id="content-menu-slide1">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide dbsy"><a href="backlog.html">待办事宜</a></div>
+				<div class="swiper-slide daibrw"><a href="do-list.html">待办任务</a></div>
+				<div class="swiper-slide swiper-slide-bb hbrw"><a href="task-report.html">汇报任务</a></div>
+				<div class="swiper-slide dubrw"><a href="handling-tasks.html">督办任务</a></div>
+				<div class="swiper-slide rwpd"><a href="task-assessment.html">任务评定</a></div>
+			</div>
+	    </div>
+	    <div class="swiper-container swiper-menu-slide" style="margin-top: 20px;">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<ul>
+						<li class="tl">任务名</li>
+						<li class="longtap tl">人员招聘发布</li>
+						<li class="longtap tl">设备报价单上报</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>分配人</li>
+						<li class="longtap">人力资源总监</li>
+						<li class="longtap">总经理</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>截止时间</li>
+						<li class="longtap">15-07-01&nbsp;10:56</li>
+						<li class="longtap">15-07-31&nbsp;10:56</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>下次汇报时间</li>
+						<li class="longtap">---</li>
+						<li class="longtap">---</li>
+				    </ul>
+				</div>
+			</div>
+			<div class="swiper-scrollbar">&nbsp;</div>
+	    </div>
+
+
+	</div>
+	
+	<div class="popup">
+	    <ul class="popup-ul">
+	    	<li class="popup-li hbjd">汇报进度</li>
+	    </ul>
+    </div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init({
+		  gestureConfig:{
+		   tap: true, //默认为true
+		   longtap: true, //默认为false
+		  }
+		});
+		mui.ready(function(){
+		    var thisindex = '';
+			var thisc = '';
+		    mui(document).on('longtap','.longtap',function(){
+		      thisindex = jQuery(this).index();
+			  thisc = jQuery(this).parent().parent().parent().children(".swiper-slide").find("ul li:eq("+thisindex+")");
+			  thisc.addClass("blue")
+			  jQuery(".popup").show();
+		    });
+		    mui(document).on('tap','.popup',function(){
+			  	thisc.removeClass("blue");
+			  	jQuery(".popup").hide();
+			});
+			mui(document).on('tap','.hbjd',function(){
+				thisc.removeClass("blue");
+			  	jQuery(".popup").hide();
+			  	mui.openWindow({
+				    url:'task-report-report.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				});
+			});
+			mui(document).on('tap','.longtap',function(){
+			  mui.openWindow({
+				    url:'task-report-details.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				});
+		    });
+		    mui(document).on('tap','.dbsy',function(){
+			  mui.openWindow({
+				    url:'backlog.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		    mui(document).on('tap','.daibrw',function(){
+			  mui.openWindow({
+				    url:'do-list.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		    mui(document).on('tap','.hbrw',function(){
+			  mui.openWindow({
+				    url:'task-report.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		    mui(document).on('tap','.dubrw',function(){
+			  mui.openWindow({
+				    url:'handling-tasks.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		    mui(document).on('tap','.rwpd',function(){
+			  mui.openWindow({
+				    url:'task-assessment.html',
+				    styles:{
+				      top:0,//新页面顶部位置
+				      bottom:0,//新页面底部位置
+				    }
+				}); 
+		    });
+		});
+		jQuery(document).ready(function () {
+			var swiper = new Swiper('#content-menu-slide1', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true
+		    });
+		    var swiper2 = new Swiper('.swiper-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true,
+		        scrollbar:'.swiper-scrollbar',
+		        scrollbarHide:false
+		    });
+
+		});
+	</script>
+</body>
+</html>

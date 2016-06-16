@@ -1,0 +1,44 @@
+@font-face {font-family: "iconfont";src:url(../fonts/iconfont.ttf) format('truetype')}
+.iconfont {font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;}
+.icon-xiangxia:before { content: "\e602"; }
+.icon-xiangyou:after { content: "\e604"; }
+.icon-checkbox:before { content: "\e600"; color: #a7a7a7;}
+.icon-checkboxoutlineblank:before { content: "\e601"; color: #a7a7a7;}
+.icon-riqi:before { content: "\e605"; position: absolute;right: 8px;top: 6px;font-size: 22px;}
+.icon-pen:before { content: "\e606";color: #F6CD6E; }
+.icon-x:before { content: "\e607"; }
+.caret-down{position: absolute;right: 10px;top: 10px;color: #009ce4;font-size: 12px;}
+
+body,.mui-content{background: #fff;}
+header.mui-bar {background: #015595;}
+.mui-bar .mui-title {color: #fff;}
+.mui-bar .mui-icon {font-size: 18px;}
+.mui-bar .mui-icon.mui-icon-left-nav{font-size: 30px;padding-top: 6px;color: #fff;}
+.mui-bar .mui-btn-link {color: #fff;font-size: 12px;}
+.mui-bar-tab .mui-tab-item.mui-active {
+    color: #fff;
+    background-color: #015494;
+}
+
+.scheduling-program{margin: 15px;}
+#calendar{width: 100%;}
+.fc-button {
+    position: relative;
+    display: inline-block;
+    padding: 0 0.2em;
+    overflow: hidden;
+    height: 1.5em;
+    line-height: 1.5em;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 14px;
+}
+.fc-header-title h2 {
+    margin-top: 0;
+    font-size: 16px;
+    white-space: nowrap;
+    margin-bottom: 0;
+    height: 21px;
+    line-height: 23px;
+}
+.tl{text-align: left!important;padding-left: 10px!important;}

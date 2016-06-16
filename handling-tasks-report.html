@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>督办汇报</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/handling-tasks.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">督办汇报</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+		
+	<div class="mui-content handling-tasks-report">
+		<div class="mui-input-row">
+			<input type="text" name="history" value="" placeholder="进度描述"/>
+			<a href="handling-tasks-report-details.html" class="history-a">查看历史</a>
+		</div>
+		<div class="mui-input-row">
+			<input type="text" name="cc" value="" placeholder="抄送"/>
+			<i class="iconfont icon-mine"></i>
+		</div>
+		<div class="mui-input-row">
+			<div class="attachment">附件</div>
+			<a href="javascript:;" class="file">选择文件<input type="file" name="" id=""></a>
+		</div>
+	</div>
+
+
+	</div>
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init();
+	</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>选人名单</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.all.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.poppicker.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/unfinished-task.css"/>  
+</head>
+<body>
+	
+    <header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">选人名单</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+    
+    <!--<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active" href="down-overdue-screen.html">确定</a>
+		<a class="mui-tab-item" href="down-overdue-screen.html">取消</a>
+	</nav>-->
+	
+	<div class="mui-content report unfinished-task-list">
+		<div class="ind mt8">
+	    	<div class="ind-con mb15">
+	    		<div class="mui-input-row">
+					<input type="text" class="mui-input-text" name="rwm" placeholder="任务名">
+					<i class="mui-icon mui-icon-search cart-down"></i>	
+				</div>
+	    	</div>
+	    </div>
+	    <div class="swiper-container" id="tab-menu-slide">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<ul>
+						<li>工号</li>
+						<li class="longtap">001</li>
+						<li class="longtap">001</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>部门</li>
+						<li class="longtap">IT</li>
+						<li class="longtap">IT</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>职位</li>
+						<li class="longtap">IT主管</li>
+						<li class="longtap">IT主管</li>
+				    </ul>
+				</div>
+			</div>
+	    </div>
+	    <div class="ind mt8">
+	    	<div class="mui-input-row">
+				<input type="text" class="mui-input-text" id="rwsx" name="rwsx" value="总部">
+				<i class="mui-icon mui-icon-arrowdown caret-down"></i>
+			</div>
+	    </div>
+	</div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.picker.all.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.poppicker.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+		(function($) {
+				$.init();
+				
+				var userPicker = new $.PopPicker();
+					userPicker.setData([{
+						value: 'gz',
+						text: '广州分公司'
+					}, {
+						value: 'sz',
+						text: '深圳分公司'
+					}, {
+						value: 'bj',
+						text: '北京分公司'
+					}, {
+						value: 'nj',
+						text: '南京分公司'
+					}]);
+					var showUserPickerButton = document.getElementById('rwsx');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						userPicker.show(function(items) {
+							showUserPickerButton.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+			})(mui);
+		
+		jQuery(document).ready(function () {
+			 //报表
+			var swiper = new Swiper('#content-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true
+		    });
+		    jQuery("#content-menu-slide .swiper-slide").click(function(){
+                jQuery(this).addClass("swiper-slide-bb").siblings(".swiper-slide").removeClass("swiper-slide-bb");
+		    });
+		    var swiper2 = new Swiper('#tab-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true
+		    });
+            jQuery("#tab-menu-slide .swiper-slide:first-of-type li").click(function(){
+                var index = $(this).index();
+                if(index == 0){
+                	jQuery(this).children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+                	jQuery(this).siblings("li").children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+                }else{
+                	jQuery(this).children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+            	    jQuery(this).siblings("li").children("i").removeClass("icon-checkbox").addClass("icon-checkboxoutlineblank");
+            	    jQuery(this).parent().children("li").first().children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+                }
+            });
+		});
+	</script>
+</body>
+</html>

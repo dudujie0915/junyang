@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>报销申请</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/information.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">报销申请</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+     
+    <nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item mui-active" href="#tabbar">删除</a>
+		<a class="mui-tab-item" href="#tabbar-with-chat">再申请</a>
+	</nav>
+		
+	<div class="mui-content information-flow">
+		 <div class="swiper-container" id="content-menu-slide">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide swiper-slide-bb">全部(0)</div>
+				<div class="swiper-slide">日报(0)</div>
+				<div class="swiper-slide">周报(0)</div>
+				<div class="swiper-slide">月报(0)</div>
+				<div class="swiper-slide">季报(0)</div>
+				<div class="swiper-slide">年报(0)</div>
+			</div>
+	    </div>
+	     <div class="swiper-container" id="ide-menu-slide">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<ul>
+						<li><i class="iconfont icon-checkboxoutlineblank"></i></li>
+						<li><i class="iconfont icon-checkboxoutlineblank"></i></li>
+						<li><i class="iconfont icon-checkboxoutlineblank"></i></li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>报表名称</li>
+						<li>工牌设计方案</li>
+						<li>工牌设计方案</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>时间范围</li>
+						<li>15-07-01-15-07-31</li>
+						<li>15-07-01-15-07-31</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>周期类型</li>
+						<li>月报</li>
+						<li>日报</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>更新时间</li>
+						<li>15-05-31</li>
+						<li>15-05-31</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>分析报表</li>
+						<li>0个</li>
+						<li></li>
+				    </ul>
+				</div>
+			</div>
+			<div class="swiper-scrollbar">&nbsp;</div>
+	    </div>
+
+
+	</div>
+
+	</div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init();
+		jQuery(document).ready(function () {
+			var swiper = new Swiper('#content-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true
+		    });
+		    jQuery("#content-menu-slide .swiper-slide").click(function(){
+                jQuery(this).addClass("swiper-slide-bb").siblings(".swiper-slide").removeClass("swiper-slide-bb");
+		    });
+		    var swiper2 = new Swiper('#ide-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true,
+		        scrollbar:'.swiper-scrollbar',
+		        scrollbarHide:false
+		    });
+            jQuery("#ide-menu-slide .swiper-slide:first-of-type li").click(function(){
+                var index = $(this).index();
+                if(index == 0){
+                	jQuery(this).children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+                	jQuery(this).siblings("li").children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+                }else{
+                	jQuery(this).children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+            	    jQuery(this).siblings("li").children("i").removeClass("icon-checkbox").addClass("icon-checkboxoutlineblank");
+            	    jQuery(this).parent().children("li").first().children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+                }
+            });
+
+		});
+	</script>
+</body>
+</html>

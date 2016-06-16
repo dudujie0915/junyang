@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>邀约任务详情</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/do-list.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">邀约任务详情</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+		
+	<div class="mui-content do-invite">
+	    <div class="mui-card">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-collapse"><span class="mui-table-view-cell-title">任务名：</span><span class="mui-table-view-cell-span">协同提供资料帮助</span></li>
+				<li class="mui-table-view-cell mui-collapse"><span class="mui-table-view-cell-title">任务属性：</span><span class="mui-table-view-cell-span">日常事务型工作</span></li>
+				<li class="mui-table-view-cell mui-collapse"><span class="mui-table-view-cell-title">邀约人：</span><span class="mui-table-view-cell-span">运营总监</span></li>
+				<li class="mui-table-view-cell mui-collapse"><span class="mui-table-view-cell-title">分配时间</span><span class="mui-table-view-cell-span">2015-07-17&nbsp;11:22</span></li>
+				<li class="mui-table-view-cell mui-collapse"><span class="mui-table-view-cell-title">邀约对象：</span><span class="mui-table-view-cell-span">演示账户</span></li>
+				<li class="mui-table-view-cell mui-collapse"><span class="mui-table-view-cell-title">截止日期：</span><span class="mui-table-view-cell-span">2015-07-17&nbsp;11:22</span></li>
+				<li class="mui-table-view-cell mui-collapse"><span class="mui-table-view-cell-title">任务描述：</span><span class="mui-table-view-cell-span">请帮助Mary提供xxx客户相关资料信息</span></li>
+			</ul>
+		</div>
+
+
+	</div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+    <script>
+		mui.init();
+		jQuery(document).ready(function () {
+		    var swiper2 = new Swiper('#ide-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true
+		    });
+            jQuery("#ide-menu-slide .swiper-slide:first-of-type li").click(function(){
+                var index = $(this).index();
+                if(index == 0){
+                	jQuery(this).children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+                	jQuery(this).siblings("li").children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+                }else{
+                	jQuery(this).children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+            	    jQuery(this).siblings("li").children("i").removeClass("icon-checkbox").addClass("icon-checkboxoutlineblank");
+            	    jQuery(this).parent().children("li").first().children("i").removeClass("icon-checkboxoutlineblank").addClass("icon-checkbox");
+                }
+            });
+
+		});
+	</script>
+</body>
+</html>

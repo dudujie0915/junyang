@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>日期查看</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.all.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/docket.css"/>  
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">日期查看</h1>
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a href="index.html"><button class="mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-right"><span class="mui-icon mui-icon-home"></span>首页</button></a>
+    </header>
+	
+	<div class="mui-content docket-review">
+	    <ul class="mui-table-view" id="docket-review-ul">
+	    	<!--
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="docket-apply.html">
+					单据申领
+				</a>
+			</li>
+			-->
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right d0">
+					本人已提交申请
+				</a>
+			</li>
+		</ul>
+		<div class="select-date-div">
+	    <button id='select-date' data-options='{"type":"date"}' class="mui-btn mui-btn-block">选择日期 ...</button>
+	    <i class="iconfont icon-riqi"></i>
+	    </div>
+	    <div class="swiper-container tab-menu-slide">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<ul>
+						<li>申请的单据名称</li>
+						<li>cw-报销申请</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>办理人</li>
+						<li>总经理</li>
+				    </ul>
+				</div>
+				<div class="swiper-slide">
+					<ul>
+						<li>办理时间</li>
+						<li>--</li>
+				    </ul>
+				</div>
+			</div>
+	    </div>
+	</div>
+	
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui.picker.all.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+		(function($) {
+				$.init();
+				var btns = $('#select-date');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							btn.innerText = rs.text;
+							/* 
+							 * 返回 false 可以阻止选择框的关闭
+							 * return false;
+							 */
+							/*
+							 * 释放组件资源，释放后将将不能再操作组件
+							 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+							 */
+							picker.dispose();
+						});
+					}, false);
+				});
+			})(mui);
+		jQuery(document).ready(function(){
+		    var swiper = new Swiper('.tab-menu-slide', {
+				slidesPerView: 'auto',
+		        freeMode: true,
+		        freeModeFluid: true
+		    });
+		});
+	</script>
+</body>
+</html>
